@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#form-id {
+    position: relative;
+    margin:auto;
+    text-align:center;
+    margin-top: 5em;
+}
