@@ -22,6 +22,6 @@ document.getElementById("add-button-id").addEventListener("click", addNoteToList
 window.addEventListener("keydown", checkEnterKeyPress, false);
 function checkEnterKeyPress(key) {
     if(key.keyCode == "13") {
-        addNoteToList;
+        addNoteToList();
     }
 }
