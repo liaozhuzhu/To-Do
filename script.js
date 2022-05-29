@@ -1,4 +1,5 @@
 let noteValue = document.getElementById("note-input-id");
+let checkBoxValues = document.getElementsByClassName("checkbox_class");
 
 function addNoteToList() {
     let addNoteValue = noteValue.value;
@@ -7,6 +8,7 @@ function addNoteToList() {
         let newLi = document.createElement("li");
         let checkbox = document.createElement('input');
         checkbox.type = "checkbox";
+        checkbox.className = "checkbox_class";
         newLi.appendChild(checkbox);
         newLi.appendChild(document.createTextNode(addNoteValue));
         unLi.appendChild(newLi);
