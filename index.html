@@ -7,24 +7,33 @@
         <title>Notes</title>
         <link rel="stylesheet" href="styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Link for Icons
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">-->
+        
     </head>
 
     <body>
-        <div id="wrapper">
+        <!-- Main Wrapper -->
+        <div class="wrapper" id="main-wrapper">
 
-            <!--Input-->
+            <!-- Input -->
             <div id="note-input">
-                <input type="text" placeholder="Take a Note">
+                <form id="add-form">
+                    <input type="text" placeholder="Take a Note" autocomplete="off" id="note-input-id">
+                    <input type="submit" id="note-add-id">
+                </form>
+                
             </div>
-            <!--Controls-->
-            <div id="controls">
-                <button id="clear-button">Clear</button>
-            </div>
-            <!--List-->
+            <!-- List -->
             <ul id="note-list"></ul>
 
         </div>
+
+        <!-- Item Wrapper -->
+        <div class="wrapper" id="item-wrapper">
+            <!-- items -->
+        </div>
+
+        <!-- Script -->
+        <script src="script.js"></script>
+
     </body>
 </html>
