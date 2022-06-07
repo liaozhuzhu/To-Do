@@ -36,11 +36,19 @@ function displayItem(todoItem) {
 
     // Refresh Checkbox
     //
+    /*let itemDiv = document.getElementById("item-wrapper");
+    let finishedItemDiv = document.getElementById("finished-item-wrapper");
+    let id = this.getAttribute("data-id");
+    let pTag = document.getElementById("p-"+id);
+    let finishedItem = document.getElementById(id);*/
+
     if (todoItem.completed == true) {
         ItemText.style.textDecoration = "line-through";
+        //finishedItemDiv.appendChild(finishedItem);
         ItemBox.checked = true;
     } else {
         ItemText.style.textDecoration = "none";
+        //itemDiv.appendChild(finishedItem);
         ItemBox.checked = false;
     }
 
@@ -181,7 +189,7 @@ function setComplete() {
     let finishedItemDiv = document.getElementById("finished-item-wrapper");
     let id = this.getAttribute("data-id");
     let pTag = document.getElementById("p-"+id);
-    let finishedItem = document.getElementById(id)
+    let finishedItem = document.getElementById(id);
 
     if (this.checked) {
         var data = {
