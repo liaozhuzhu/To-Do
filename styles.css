@@ -9,23 +9,28 @@ body{
     padding: 30px;
 }
 
+.item-div-class {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: left;
+}
+
+#finished-item-wrapper h1 {
+    font-size: 20px;
+    opacity: 50%;
+}
+
 #note-input-id {
     border-radius: 5px;
 }
 
 #note-add-id {
     border-radius: 5px;
-}
-
-#item-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: auto;
-    border: 3px solid black;
-    border-radius: 15px;
-    padding: 50px;
-    text-align: left;
 }
 
 .item-wrapper-class {
@@ -35,6 +40,10 @@ body{
 
 .checkbox-class {
     display: inline;
+}
+
+.checkbox-class:hover {
+    background-color:#000000
 }
 
 .note-text-class {
@@ -54,4 +63,9 @@ body{
     background-color: rgb(244, 244, 244);
     border-radius: 5px;
     border: 2px solid black;
+}
+
+.delete-class:hover {
+    background-color: rgb(232, 249, 255);
+    border-radius: 7px;
 }

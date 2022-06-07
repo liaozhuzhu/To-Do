@@ -174,8 +174,11 @@ function deleteItem() {
 //
 function setComplete() {
 
+    let itemDiv = document.getElementById("item-wrapper");
+    let finishedItemDiv = document.getElementById("finished-item-wrapper");
     let id = this.getAttribute("data-id");
     let pTag = document.getElementById("p-"+id);
+    let finishedTag = document.getElementById(id)
 
     if (this.checked) {
         var data = {
@@ -200,12 +203,14 @@ function setComplete() {
             // parse JSON response
             var todo = JSON.parse(this.responseText);
 
-            //strikethrough complete items
+            //strikethrough complete items and move finished items to the finished div
             //
             if (todo.completed == true) {
                 pTag.style.textDecoration = "line-through";
+                finishedItemDiv.appendChild(finishedTag);
             } else {
                 pTag.style.textDecoration = "none";
+                itemDiv.appendChild(finishedTag);
             }
 
 
