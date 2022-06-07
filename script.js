@@ -6,6 +6,59 @@ const apiKey = "96364a-276feb-952475-c85e9e-d6e333";
 let inputForm = document.getElementById("add-form");
 inputForm.addEventListener("submit", addItem);
 
+loadItems();
+
+// Display 
+//
+
+function displayItem(todoItem) {
+
+    // create item wrapper
+    //
+    let ItemDiv = document.createElement("div");
+    ItemDiv.setAttribute("data-id", todoItem.id);
+    ItemDiv.setAttribute("id", todoItem.id);
+
+    // create text, checkbox, delete button for the item
+    //
+    let ItemText = document.createElement("p");
+    ItemText.innerHTML = todoItem.text;
+    ItemText.setAttribute("id", "p-"+todoItem.id);
+
+    let ItemBox = document.createElement("input");
+    ItemBox.type = "checkbox";
+    ItemBox.setAttribute("data-id", todoItem.id);
+    ItemBox.addEventListener("click", setComplete);
+
+    // on refresh, need to set checkbox and completed again
+    //
+    if (todoItem.completed == true) {
+        ItemText.style.textDecoration = "line-through";
+        ItemBox.checked = true;
+    } else {
+        ItemText.style.textDecoration = "none";
+        ItemBox.checked = false;
+    }
+
+    let ItemDelBtn = document.createElement("input");
+    ItemDelBtn.type = "button";
+    ItemDelBtn.value = "X";
+    ItemDelBtn.setAttribute("data-id", todoItem.id);
+    ItemDelBtn.addEventListener("click", deleteItem);
+
+    // append item wrapper to content div
+    //
+    let contentArea = document.getElementById("item-wrapper");
+    contentArea.appendChild(ItemDiv);
+    
+    // append item wrapper children to item wrapper
+    //
+    ItemDiv.appendChild(ItemBox);
+    ItemDiv.appendChild(ItemText);
+    ItemDiv.appendChild(ItemDelBtn);
+
+}
+
 // Load Items From Server
 //
 
@@ -74,57 +127,6 @@ function addItem(event) {
     // clear input box
     //
     document.getElementById("note-input-id").value = "";
-}
-
-// Display 
-//
-
-function displayItem(todoItem) {
-
-    // create item wrapper
-    //
-    let ItemDiv = document.createElement("div");
-    ItemDiv.setAttribute("data-id", todoItem.id);
-    ItemDiv.setAttribute("id", todoItem.id);
-
-    // create text, checkbox, delete button for the item
-    //
-    let ItemText = document.createElement("p");
-    ItemText.innerHTML = todoItem.text;
-    ItemText.setAttribute("id", "p-"+todoItem.id);
-
-    let ItemBox = document.createElement("input");
-    ItemBox.type = "checkbox";
-    ItemBox.setAttribute("data-id", todoItem.id);
-    ItemBox.addEventListener("click", setComplete);
-
-    // on refresh, need to set checkbox and completed again
-    //
-    if (todoItem.completed == true) {
-        ItemText.style.textDecoration = "line-through";
-        ItemBox.checked = true;
-    } else {
-        ItemText.style.textDecoration = "none";
-        ItemBox.checked = false;
-    }
-
-    let ItemDelBtn = document.createElement("input");
-    ItemDelBtn.type = "button";
-    ItemDelBtn.value = "X";
-    ItemDelBtn.setAttribute("data-id", todoItem.id);
-    ItemDelBtn.addEventListener("click", deleteItem);
-
-    // append item wrapper to content div
-    //
-    let contentArea = document.getElementById("item-wrapper");
-    contentArea.appendChild(ItemDiv);
-    
-    // append item wrapper children to item wrapper
-    //
-    ItemDiv.appendChild(ItemBox);
-    ItemDiv.appendChild(ItemText);
-    ItemDiv.appendChild(ItemDelBtn);
-
 }
 
 // Delete
