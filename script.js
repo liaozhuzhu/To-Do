@@ -26,6 +26,7 @@ function displayItem(todoItem) {
     ItemText.className = "note-text-class";
     ItemText.innerHTML = todoItem.text;
     ItemText.setAttribute("id", "p-"+todoItem.id);
+    
 
     let ItemBox = document.createElement("input");
     ItemBox.type = "checkbox";
@@ -60,6 +61,8 @@ function displayItem(todoItem) {
     ItemDiv.appendChild(ItemBox);
     ItemDiv.appendChild(ItemText);
     ItemDiv.appendChild(ItemDelBtn);
+
+    document.getElementById(ItemText.id).contentEditable = "true";
 
 }
 
@@ -152,9 +155,9 @@ function deleteItem() {
             // remove div that displays the item from main-wrapper 
             // if item successfully removed from server
             //
-            let deleteDiv = document.getElementById(id);
+            let deleteItem = document.getElementById(id);
         
-            deleteDiv.remove();
+            deleteItem.remove();
 
 
         } else if (this.readyState == 4) {
@@ -178,7 +181,7 @@ function setComplete() {
     let finishedItemDiv = document.getElementById("finished-item-wrapper");
     let id = this.getAttribute("data-id");
     let pTag = document.getElementById("p-"+id);
-    let finishedTag = document.getElementById(id)
+    let finishedItem = document.getElementById(id)
 
     if (this.checked) {
         var data = {
@@ -206,11 +209,11 @@ function setComplete() {
             //strikethrough complete items and move finished items to the finished div
             //
             if (todo.completed == true) {
-                finishedItemDiv.appendChild(finishedTag);
+                finishedItemDiv.appendChild(finishedItem);
                 pTag.style.textDecoration = "line-through";
             } else {
                 pTag.style.textDecoration = "none";
-                itemDiv.appendChild(finishedTag);
+                itemDiv.appendChild(finishedItem);
             }
 
 

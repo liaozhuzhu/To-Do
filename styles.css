@@ -14,15 +14,23 @@ body{
     flex-direction: column;
     width: 20%;
     margin: auto;
-    border: 3px solid black;
-    border-radius: 15px;
-    padding: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
     text-align: left;
 }
 
+.item-div-class h1 {
+    font-size: 20px;
+    opacity: 50%;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
 #finished-item-wrapper {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 50px;
 }
 
 #finished-item-wrapper h1 {
@@ -45,7 +53,9 @@ body{
 
 .item-wrapper-class {
     float: left;
-    padding: 20px;
+    padding: 15px;
+    margin-bottom: .2px;
+    border-bottom: 1px solid black;
 }
 
 .checkbox-class {
@@ -71,8 +81,8 @@ body{
     width: 18px;
     height: 18px;
     background-color: rgb(244, 244, 244);
-    border-radius: 5px;
-    border: 2px solid black;
+    border-radius: 3px;
+    border: 1px solid black;
 }
 
 .delete-class:hover {
