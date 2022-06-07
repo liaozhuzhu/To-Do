@@ -206,8 +206,8 @@ function setComplete() {
             //strikethrough complete items and move finished items to the finished div
             //
             if (todo.completed == true) {
-                pTag.style.textDecoration = "line-through";
                 finishedItemDiv.appendChild(finishedTag);
+                pTag.style.textDecoration = "line-through";
             } else {
                 pTag.style.textDecoration = "none";
                 itemDiv.appendChild(finishedTag);
