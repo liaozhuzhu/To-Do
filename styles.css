@@ -44,9 +44,10 @@ body{
     display: inline;
     padding: 0px;
     text-align: center;
-    width: 25px;
-    height: 20px;
-    background-color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(244, 244, 244);
     border-radius: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
