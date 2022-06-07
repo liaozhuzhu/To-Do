@@ -33,6 +33,11 @@ body{
     border-radius: 5px;
 }
 
+#note-add-id:hover {
+    border-radius: 6px;
+    background-color:rgb(232, 249, 255);
+}
+
 .item-wrapper-class {
     float: left;
     padding: 20px;
