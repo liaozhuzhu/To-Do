@@ -1,4 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');*/
 body{
     margin: 0;
     padding: 0;
@@ -19,14 +18,18 @@ body{
 }
 
 #item-wrapper {
+    display: flex;
+    flex-direction: column;
     width: 30%;
     margin: auto;
     border: 3px solid black;
     border-radius: 15px;
     padding: 50px;
+    text-align: left;
 }
 
 .item-wrapper-class {
+    float: left;
     padding: 20px;
 }
 
@@ -34,7 +37,7 @@ body{
     display: inline;
 }
 
-.item-text-class {
+.note-text-class {
     display: inline;
     padding-left: 20px;
     padding-right: 20px;
@@ -42,6 +45,7 @@ body{
 
 .delete-class {
     display: inline;
+    float: right;
     padding: 0px;
     text-align: center;
     font-size: 10px;

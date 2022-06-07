@@ -13,14 +13,14 @@ loadItems();
 
 function displayItem(todoItem) {
 
-    // create item wrapper
+    // Create Item Wrapper
     //
     let ItemDiv = document.createElement("div");
     ItemDiv.className = "item-wrapper-class";
     ItemDiv.setAttribute("data-id", todoItem.id);
     ItemDiv.setAttribute("id", todoItem.id);
 
-    // create text, checkbox, delete button for the item
+    // Create Item Parts
     //
     let ItemText = document.createElement("p");
     ItemText.className = "note-text-class";
@@ -33,7 +33,7 @@ function displayItem(todoItem) {
     ItemBox.setAttribute("data-id", todoItem.id);
     ItemBox.addEventListener("click", setComplete);
 
-    // on refresh, need to set checkbox and completed again
+    // Refresh Checkbox
     //
     if (todoItem.completed == true) {
         ItemText.style.textDecoration = "line-through";
@@ -50,12 +50,12 @@ function displayItem(todoItem) {
     ItemDelBtn.setAttribute("data-id", todoItem.id);
     ItemDelBtn.addEventListener("click", deleteItem);
 
-    // append item wrapper to content div
+    // Append Item Wrapper to Item Div
     //
     let contentArea = document.getElementById("item-wrapper");
     contentArea.appendChild(ItemDiv);
     
-    // append item wrapper children to item wrapper
+    // Append Items to Item Wrapper
     //
     ItemDiv.appendChild(ItemBox);
     ItemDiv.appendChild(ItemText);
