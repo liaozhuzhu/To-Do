@@ -16,17 +16,20 @@ function displayItem(todoItem) {
     // create item wrapper
     //
     let ItemDiv = document.createElement("div");
+    ItemDiv.className = "todo-item-wrapper";
     ItemDiv.setAttribute("data-id", todoItem.id);
     ItemDiv.setAttribute("id", todoItem.id);
 
     // create text, checkbox, delete button for the item
     //
     let ItemText = document.createElement("p");
+    ItemText.className = "item-text-class";
     ItemText.innerHTML = todoItem.text;
     ItemText.setAttribute("id", "p-"+todoItem.id);
 
     let ItemBox = document.createElement("input");
     ItemBox.type = "checkbox";
+    ItemBox.className = "complete-checkbox-class";
     ItemBox.setAttribute("data-id", todoItem.id);
     ItemBox.addEventListener("click", setComplete);
 
@@ -42,7 +45,8 @@ function displayItem(todoItem) {
 
     let ItemDelBtn = document.createElement("input");
     ItemDelBtn.type = "button";
-    ItemDelBtn.value = "X";
+    ItemDelBtn.className = "delete-button-class";
+    ItemDelBtn.value = "delete";
     ItemDelBtn.setAttribute("data-id", todoItem.id);
     ItemDelBtn.addEventListener("click", deleteItem);
 
