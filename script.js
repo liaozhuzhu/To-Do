@@ -18,6 +18,7 @@ function displayItem(todoItem) {
     let ItemDiv = document.createElement("div");
     ItemDiv.className = "item-wrapper-class";
     ItemDiv.setAttribute("data-id", todoItem.id);
+    ItemDiv.setAttribute("name", "item-div");
     ItemDiv.setAttribute("id", todoItem.id);
 
     // Create Item Parts
@@ -33,24 +34,6 @@ function displayItem(todoItem) {
     ItemBox.className = "checkbox-class";
     ItemBox.setAttribute("data-id", todoItem.id);
     ItemBox.addEventListener("click", setComplete);
-
-    // Refresh Checkbox
-    //
-    /*let itemDiv = document.getElementById("item-wrapper");
-    let finishedItemDiv = document.getElementById("finished-item-wrapper");
-    let id = this.getAttribute("data-id");
-    let pTag = document.getElementById("p-"+id);
-    let finishedItem = document.getElementById(id);*/
-
-    if (todoItem.completed == true) {
-        ItemText.style.textDecoration = "line-through";
-        //finishedItemDiv.appendChild(finishedItem);
-        ItemBox.checked = true;
-    } else {
-        ItemText.style.textDecoration = "none";
-        //itemDiv.appendChild(finishedItem);
-        ItemBox.checked = false;
-    }
 
     let ItemDelBtn = document.createElement("input");
     ItemDelBtn.type = "button";
@@ -69,6 +52,19 @@ function displayItem(todoItem) {
     ItemDiv.appendChild(ItemBox);
     ItemDiv.appendChild(ItemText);
     ItemDiv.appendChild(ItemDelBtn);
+
+    // Refresh Checkbox
+    //
+    let finishedItemDiv = document.getElementById("finished-item-wrapper");
+
+    if (todoItem.completed == true) {
+        ItemText.style.textDecoration = "line-through";
+        finishedItemDiv.appendChild(ItemDiv);
+        ItemBox.checked = true;
+    } else {
+        ItemText.style.textDecoration = "none";
+        ItemBox.checked = false;
+    }
 
     document.getElementById(ItemText.id).contentEditable = "true";
 
