@@ -28,7 +28,6 @@ function displayItem(todoItem) {
     ItemText.innerHTML = todoItem.text;
     ItemText.setAttribute("id", "p-"+todoItem.id);
     
-
     let ItemBox = document.createElement("input");
     ItemBox.type = "checkbox";
     ItemBox.className = "checkbox-class";
@@ -53,8 +52,6 @@ function displayItem(todoItem) {
     ItemDiv.appendChild(ItemText);
     ItemDiv.appendChild(ItemDelBtn);
 
-    
-    
     // On Refresh
     //
     let finishedItemDiv = document.getElementById("finished-item-wrapper");

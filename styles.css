@@ -8,7 +8,7 @@ body{
     text-align: center;
     padding: 30px;
 }
-
+ 
 .item-div-class {
     display: flex;
     flex-direction: column;
