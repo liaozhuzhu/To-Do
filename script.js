@@ -53,6 +53,8 @@ function displayItem(todoItem) {
     ItemDiv.appendChild(ItemText);
     ItemDiv.appendChild(ItemDelBtn);
 
+    document.getElementById(ItemText.id).contentEditable = "true";
+    
     // Refresh Checkbox
     //
     let finishedItemDiv = document.getElementById("finished-item-wrapper");
@@ -65,8 +67,6 @@ function displayItem(todoItem) {
         ItemText.style.textDecoration = "none";
         ItemBox.checked = false;
     }
-
-    document.getElementById(ItemText.id).contentEditable = "true";
 
 }
 
