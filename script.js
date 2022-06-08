@@ -53,9 +53,9 @@ function displayItem(todoItem) {
     ItemDiv.appendChild(ItemText);
     ItemDiv.appendChild(ItemDelBtn);
 
-    document.getElementById(ItemText.id).contentEditable = "true";
     
-    // Refresh Checkbox
+    
+    // On Refresh
     //
     let finishedItemDiv = document.getElementById("finished-item-wrapper");
 
